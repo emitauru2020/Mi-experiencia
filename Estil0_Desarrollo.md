@@ -14,10 +14,10 @@ La presente guía se realizó buscando los siguientes objetivos:
 ## Tabla de Contenidos
 
   1. [Creación de nombres](#Creación-de-nombres)
-  1. [Segundo](#dominios-enumerados)
-  1. [Tercero](#identación-y-espaciado)
-  1. [Cuarto](#structured-data-types)
-  1. [Buenas practicas](#structured-data-types)
+  1. [Segundo](#Segundo)
+  1. [Tercero](#Tercero)
+  1. [Cuarto](#Cuarto)
+  1. [Buenas practicas](#Buenas-practicas)
 
 
 ## Creación de nombres
