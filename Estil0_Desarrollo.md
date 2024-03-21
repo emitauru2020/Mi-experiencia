@@ -13,25 +13,14 @@ La presente guía se realizó buscando los siguientes objetivos:
 
 ## Tabla de Contenidos
 
-  1. [Definición de nombres](#definición-de-nombres)
-  1. [Dominios enumerados](#dominios-enumerados)
-  1. [Identación y espaciado](#identación-y-espaciado)
-  1. [Structured Data Types](#structured-data-types)
-  1. [Strings](#strings)
-  1. [Comentarios](#comentarios)
-  1. [Comandos y funciones](#comandos-y-funciones)
-  1. [Parámetros](#parámetros)
-  1. [Subrutinas](#subrutinas)
-  1. [WebPanels en FrontEnd](#webpanels-en-frontend)
-  
-  * [Buenas prácticas](#buenas-prácticas)
-  * [Recursos](#recursos)
-  * [Empresas que utilizan esta guia](#empresas-que-utilizan-esta-guia)
-  * [Traducciones](#traducciones)
-  * [Licencia](#licencia)
-  * [Modificaciones al documento](#modificaciones-al-documento)
+  1. [Creación de nombres](#Creación-de-nombres)
+  1. [Segundo](#dominios-enumerados)
+  1. [Tercero](#identación-y-espaciado)
+  1. [Cuarto](#structured-data-types)
+  1. [Buenas practicas](#structured-data-types)
 
-## Definición de nombres
+
+## Creación de nombres
 
   <a name="naming--descriptive"></a><a name="1.1"></a>
   - [1.1](#naming--descriptive) Se debe ser descriptivo con los nombres.
@@ -136,7 +125,7 @@ La presente guía se realizó buscando los siguientes objetivos:
 
 **[Volver al inicio](#tabla-de-contenidos)**
 
-## Identación y espaciado
+## Segundo
   <a name="whitespace-tab"></a><a name="2.1"></a>
   - [2.1](#whitespace-tab) Utilizar tabuladores (tab) en lugar de "espacios". De esta forma, cada uno puede visializar la cantidad de espacioes que prefiera, ya que se configura en GeneXus.
     > La identación ofrece a los desarrolladores una mejor lectura del código fuente. Si tomamos una identación estandard, facilitará al resto entednder el código fuente.
@@ -198,7 +187,7 @@ La presente guía se realizó buscando los siguientes objetivos:
 
 **[Volver al inicio](#tabla-de-contenidos)**
 
-## Dominios enumerados
+## Tercero
   <a name="enums-use"></a><a name="3.1"></a>
   - [3.1](#enums-use) Evitar la utilización de textos/números fijos cuando pueden existir multiples valores.
     > Simplificar la lectura y no necesitar recordar el texto específico de cada opción.
