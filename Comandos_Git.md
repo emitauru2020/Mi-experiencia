@@ -4,7 +4,7 @@ por [Emanuel da Silva](https://www.linkedin.com/in/emanuel-da-silva-5487a72a9/)
 ## Intro
 Guia de comandos de consola en git que pueden ser de ayuda
 
-## Tabla de Contenidos
+## Lista de comandos
 
   1. [Ignorar Codificación](#ignorar-codificación)
   2. [Comando dos](#comando-dos)
