@@ -5,7 +5,7 @@ por [Emanuel da Silva](https://www.linkedin.com/in/emanuel-da-silva-5487a72a9/)
 La idea es registrar las diferentes experiencias afrontadas en Odoo:
 
 ## Objetivo
-Tratar de unificar en un solo lugar los diferentes documentos que se realizaron para el desarrollo en Odoo y GeneXus en los cuales estuve involucrado:
+Tratar de unificar en un solo lugar los diferentes documentos que se realizaron para el desarrollo en Odoo en los cuales estuve involucrado:
 
   1. Mejores prácticas para el desarrollo en Odoo.
   1. Ejemplos de como resolver casos especificos.
