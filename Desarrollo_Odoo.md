@@ -14,26 +14,29 @@ Tratar de unificar en un solo lugar los diferentes documentos que se realizaron 
 ## Tabla de Contenidos
 
   1. [Armado de ambiente](#Armado-de-ambiente)
-      1. [Estructura de Carpetas](#Estructura-de-Carpetas)
-      1. [Clonar Odoo Server](#Clonar-Odoo-Server)
-      1. [Pycharm](#Pycharm)
-      1. [PostgreSQL](#PostgreSQL)
-      1. [Instalar Python](#Instalar-Python)
-      1. [Entornos Virtuales](#Entornos-Virtuales)
+      1.1 [Estructura de Carpetas](#Estructura-de-Carpetas)
+      1.2 [Clonar Odoo Server](#Clonar-Odoo-Server)
+      1.3 [Pycharm](#Pycharm)
+      1.4 [PostgreSQL](#PostgreSQL)
+      1.5 [Instalar Python](#Instalar-Python)
+      1.6 [Entornos Virtuales](#Entornos-Virtuales)
   2. [Creación de nombres](#Creación-de-nombres)
   3. [Herencia desde Modulos diferentes](#Herencia-desde-Modulos-diferentes)
   
 ## Armado de ambiente
 
-  - [Estructura de Carpetas](#campo) Se recomienda que estas tengan la siguiente estructura:
+## Estructura de Carpetas
+  - [1.1](#campo) Se recomienda que estas tengan la siguiente estructura:
 La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro de ella otras tres carpetas con la siguiente nomenclatura, la primera "Odoo Server" con el código fuente de Odoo, la segunda "projects" donde se alojan los proyectos en esta versión y por último "Venv" donde estarán los diferentes entornos virtuales de los proyectos.
 
-  - [Clonar Odoo Server](#campo) Primero accedemos al git donde se alojan las versiones de Odoo https://github.com/odoo/odoo y copiamos el enlace para descargarlo por consola en nuestro equipo. Abriendo una consola en la carpeta que va a contener el código fuente de Odoo podemos usar el siguiente código para descargar la última versión actualizada, sustituimos "url" por la que copiamos del git de Odoo y 17.0 por la version que desamos obtener.
+## Clonar Odoo Server
+  - [1.2](#campo) Primero accedemos al git donde se alojan las versiones de Odoo https://github.com/odoo/odoo y copiamos el enlace para descargarlo por consola en nuestro equipo. Abriendo una consola en la carpeta que va a contener el código fuente de Odoo podemos usar el siguiente código para descargar la última versión actualizada, sustituimos "url" por la que copiamos del git de Odoo y 17.0 por la version que desamos obtener.
       ```javascript
         git clone url --depth 1 --branch 17.0
       ```
 
-  - [Pycharm](#campo) Descarga e instalación de Pycharm
+## Pycharm
+  - [1.3](#campo) Descarga e instalación de Pycharm
       - [1](#campo) Accedemos a la página y descargamos el Professional https://www.jetbrains.com/pycharm/
       - [2](#campo) Instalamos el programa en nuestro equipo sin ejecutarlo
       - [3](#campo) Creamos una carpeta en nuestro equipo la cual no se podra mover y descargamos los archivos de este sitio https://3.jetbra.in/, no ceramos la url ya que vamos a volver por el codigo de activación
@@ -60,7 +63,9 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
           -Xmx4096m
         ```
 
-  - [PostgreSQL](#campo) Descarga e instalación de PostgreSQL 
+## PostgreSQL
+
+  - [1.4](#campo) Descarga e instalación de PostgreSQL 
     - [1](#campo) Accedemos a la página y descargamos el PostgreSQL https://www.postgresql.org/download/ y lo instalamos
     - [2](#campo) Al finalizar la instalación debemos detener el servicio ya que necesitamos que se ejecute a través del ide
     - [3-Linux](#campo) Detener el servicio para después quitar de la lista de ejecutados automáticos
@@ -70,12 +75,16 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
       ```
     - [3-Windows](#campo) Accedemos a Servicios, buscamos "PostgreSQL" y deshabilitamos el inicio automático.
 
-  - [Instalar Python](#campo) Descarga e instalación de Python 
+## Instalar Python
+
+  - [1.5](#campo) Descarga e instalación de Python 
     - [1](#campo) 
     - [2](#campo) 
     - [3-](#campo) 
 
-  - [Entornos Virtuales](#campo) Creación de los entornos virtuales 
+## Entornos Virtuales
+
+  - [1.6](#campo) Creación de los entornos virtuales 
     - [1](#campo) 
     - [2](#campo) 
     - [3-](#campo) 
