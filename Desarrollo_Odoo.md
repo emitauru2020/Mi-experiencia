@@ -26,7 +26,7 @@ Prueba 1Tratar de unificar en un solo lugar los diferentes documentos que se rea
   - [1.1](#campo) Se debe ser descriptivo con los nombres de los campos.
 	> El nombre debe ser autodescriptivo.
 
-    ```javascript
+    ```python
     mal
     Campo: licenf
 
