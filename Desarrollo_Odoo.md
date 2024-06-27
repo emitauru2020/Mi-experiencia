@@ -27,7 +27,7 @@ Prueba 1Tratar de unificar en un solo lugar los diferentes documentos que se rea
 	> El nombre debe ser autodescriptivo.
 
     ```javascript
-    // mal
+    mal
     Campo: licenf
 
     // bien
