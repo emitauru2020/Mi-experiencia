@@ -29,7 +29,52 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
         git clone url --depth 1 --branch 17.0
       ```
 
-  - [Pycharm](#campo) Herramientas para complementar el desarrollo
+  - [Pycharm](#campo) Descarga e instalación de Pycharm
+      - [1](#campo) Accedemos a la página y descargamos el Professional https://www.jetbrains.com/pycharm/
+      - [2](#campo) Instalamos el programa en nuestro equipo sin ejecutarlo
+      - [3](#campo) Creamos una carpeta en nuestro equipo la cual no se podra mover y descargamos los archivos de este sitio https://3.jetbra.in/, no ceramos la url ya que vamos a volver por el codigo de activación
+      - [4](#campo) En la carpeta que creamos abrimos el archivo readme.txt y copiamos la siguiente linea -javaagent:/path/to/ja-netfilter.jar=jetbrains
+      - [5](#campo) Donde esta instlalado Pycharm en la carpeta bin abrimos el documento pycharm64.vmoptions y agregamos esta linea que copiamos
+      - [6](#campo) Pegamos la línea: -javaagent:/path/to/ja-netfilter.jar=jetbrains al final 
+      - [7](#campo) Volvemos a la carpeta donde donde alojamos los archivos y copiamos la direccion del archivo ja-netfilter.jar
+      - [8](#campo) De nuevo en el documento pycharm64.vmoptions sustituimos path/to por por la dirección del archivo que copiamos en el paso anterior.
+        ```javascript
+          //Linux
+          -javaagent:/home/user/Escritorio/pch/ja-netfilter.jar=jetbrains
+          //Windows
+          -javaagent:"C:\Users\emanu\Documents\PycharmCrack\jetbra\ja-netfilter.jar"=jetbrains
+        ```
+      - [9-Linux](#campo) En la carpeta donde estan los archivos descargados, ingresamos a la carpeta scripts y abrimos un terminal, ingresamos sudo su para tener los permisos y ejecutamos el install.sh con el comando: sh install.sh y luego reiniciamos
+      - [10-Windows](#campo) En la carpeta donde estan los archivos descargados ejecutamos Install-all-user.vbs
+      - [11](#campo) Ejecutamos el Pycharm y seleccinamos la prueba por 30 días
+      - [12](#campo) Vamos a la url donde se descargaron los archivos y buscamos con Ctrl+f pycharm y copiamos el texto de la licencia.
+      - [13](#campo) En el Pycharm vamos a help, register, seleccionamos activar por código y pegamos
+      - [14](#campo) Por último seleccionamos Activar
+      - [15](#campo) Se puede aumentar RAM dedicada al ide, para ello abrimos el archivo pycharm64.vmoptions y modificamos la memoria min y max
+        ```javascript
+          -Xms512m
+          -Xmx4096m
+        ```
+
+  - [PostgreSQL](#campo) Descarga e instalación de PostgreSQL 
+    - [1](#campo) Accedemos a la página y descargamos el PostgreSQL https://www.postgresql.org/download/ y lo instalamos
+    - [2](#campo) Al finalizar la instalación debemos detener el servicio ya que necesitamos que se ejecute a través del ide
+    - [3-Linux](#campo) Detener el servicio para después quitar de la lista de ejecutados automáticos
+      ```javascript
+        sudo service odoo stop
+        sudo systemctl disable odoo
+      ```
+    - [3-Windows](#campo) Accedemos a Servicios, buscamos "PostgreSQL" y deshabilitamos el inicio automático.
+
+    - [Instalar Python](#campo) Descarga e instalación de Python 
+      - [1](#campo) 
+      - [2](#campo) 
+      - [3-](#campo) 
+
+    - [Entornos Virtuales](#campo) Creación de los entornos virtuales 
+      - [1](#campo) 
+      - [2](#campo) 
+      - [3-](#campo) 
 
 
 **[Volver al inicio](#tabla-de-contenidos)**
