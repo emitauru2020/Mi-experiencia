@@ -39,8 +39,8 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
   <a name="campo"></a><a name="1.1"></a>
   - [1.1](#campo) Se debe ser descriptivo con los nombres de los campos. El nombre debe ser autodescriptivo.
 
-    ```javascript
-    // mal
+    ```python
+    mal
     Campo: licenf
 
     // bien
