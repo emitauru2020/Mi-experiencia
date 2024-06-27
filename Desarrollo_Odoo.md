@@ -5,26 +5,39 @@ por [Emanuel da Silva](https://www.linkedin.com/in/emanuel-da-silva-5487a72a9/)
 La idea es registrar las diferentes experiencias afrontadas en Odoo:
 
 ## Objetivo
-Prueba 1Tratar de unificar en un solo lugar los diferentes documentos que se realizaron para el desarrollo en Odoo en los cuales estuve involucrado:
+Tratar de unificar en un solo lugar los diferentes documentos que se realizaron para el desarrollo en Odoo en los cuales estuve involucrado:
 
   1. Mejores prácticas para el desarrollo en Odoo.
-  1. Ejemplos de como resolver casos especificos.
-  1. Novedades del lenguaje.
+  2. Ejemplos de como resolver casos especificos.
+  3. Novedades del lenguaje.
 
 ## Tabla de Contenidos
 
-  1. [Creación de nombres](#Creación-de-nombres)
-  1. [Segundo](#Segundo)
-  1. [Tercero](#Tercero)
-  1. [Cuarto](#Cuarto)
-  1. [Herencia desde Modulos diferentes](#Herencia-desde-Modulos-diferentes)
+  1. [Armado de ambiente](#Armado-de-ambiente)
+  2. [Creación de nombres](#Creación-de-nombres)
+  3. [Herencia desde Modulos diferentes](#Herencia-desde-Modulos-diferentes)
 
+## Armado de ambiente
+
+  <a name="campo"></a><a name="1.1"></a>
+
+  - [Estructura de Carpetas](#campo) Se recomienda que estas tengan la siguiente estructura:
+La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro de ella otras tres carpetas con la siguiente nomenclatura, la primera "Odoo Server" con el código fuente de Odoo, la segunda "projects" donde se alojan los proyectos en esta versión y por último "Venv" donde estarán los diferentes entornos virtuales de los proyectos.
+
+  - [Clonar Odoo Server](#campo) Primero accedemos al git donde se alojan las versiones de Odoo https://github.com/odoo/odoo y copiamos el enlace para descargarlo por consola en nuestro equipo. Abriendo una consola en la carpeta que va a contener el código fuente de Odoo podemos usar el siguiente código para descargar la última versión actualizada, sustituimos "url" por la que copiamos del git de Odoo y 17.0 por la version que desamos obtener.
+      ```javascript
+        git clone url --depth 1 --branch 17.0
+      ```
+
+  - [Pycharm](#campo) Herramientas para complementar el desarrollo
+
+
+**[Volver al inicio](#tabla-de-contenidos)**
 
 ## Creación de nombres
 
   <a name="campo"></a><a name="1.1"></a>
-  - [1.1](#campo) Se debe ser descriptivo con los nombres de los campos.
-	> El nombre debe ser autodescriptivo.
+  - [1.1](#campo) Se debe ser descriptivo con los nombres de los campos. El nombre debe ser autodescriptivo.
 
     ```javascript
     // mal
@@ -84,14 +97,14 @@ Prueba 1Tratar de unificar en un solo lugar los diferentes documentos que se rea
     
 
     // bien
-	InsertCustomer
-	UpsertCustomer
-	DeleteCustomer
-	GetCustomerName
-	SetCustomerName
-	RecalcDiscount
-	DoCheckout
-	```
+      InsertCustomer
+      UpsertCustomer
+      DeleteCustomer
+      GetCustomerName
+      SetCustomerName
+      RecalcDiscount
+      DoCheckout
+	  ```
 
   <a name="naming-gik"></a><a name="1.6"></a>
   - [1.6](#naming-gik) Utilizar [nomenclatura GIK](http://wiki.genexus.com/commwiki/servlet/wiki?1872,GIK) para nombrar atributos. Se pueden crear atributos sin el límite de los 3 caracteres si el nombre no supera los 20 caracteres y mejora la comprensión.
@@ -99,15 +112,15 @@ Prueba 1Tratar de unificar en un solo lugar los diferentes documentos que se rea
 
     ```javascript
     // mal
-    InsCusDte
-    DateInsertCustomer
+      InsCusDte
+      DateInsertCustomer
 
     // bien
-    CusInsDte
+      CusInsDte
 
     // mejor
-    CustomerInsertDate
-	```
+      CustomerInsertDate
+	  ```
 
   <a name="naming-trns"></a><a name="1.7"></a>
   - [1.7](#naming-trns) Las transacciones deben tener el nombre de la entidad en singular.
@@ -115,162 +128,10 @@ Prueba 1Tratar de unificar en un solo lugar los diferentes documentos que se rea
 
     ```javascript
     // mal
-    Trn:Products
-    Trn:Customers
+      Trn:Products
+      Trn:Customers
 
     // bien
-    Trn:Product
-    Trn:Customer
-	```
-
-**[Volver al inicio](#tabla-de-contenidos)**
-
-## Segundo
-  <a name="whitespace-tab"></a><a name="2.1"></a>
-  - [2.1](#whitespace-tab) Utilizar tabuladores (tab) en lugar de "espacios". De esta forma, cada uno puede visializar la cantidad de espacioes que prefiera, ya que se configura en GeneXus.
-    > La identación ofrece a los desarrolladores una mejor lectura del código fuente. Si tomamos una identación estandard, facilitará al resto entednder el código fuente.
-
-	 ```javascript
-    // mal
-    if &DocumentOrderType = OrderType.Sale
-    msg( "Sale")
-    endif
-
-    // mal
-    if &DocumentOrderType = OrderType.Sale
-    		msg( "Sale")
-    endif
-
-    // bien
-    if &DocumentOrderType = OrderType.Sale
-        msg( "Sale")
-    endif
-    ```
-
-  <a name="whitespace-where"></a><a name="2.2"></a>
-  - [2.2](#whitespace-where) Se deben identar las condiciónes y comandos dentro de un for each.
-
-	 ```javascript
-    // mal
-    for each Document
-    where DocumentOrderType = OrderType.Sale
-    ...
-    endfor
-
-    // mal
-    for each Document
-    defined by DocumentOrderType
-    ...
-    endfor
-
-    // bien
-    for each Document
-        where DocumentOrderType = OrderType.Sale
-
-        ...
-    endfor
-    ```
- 
-  <a name="whitespace-parms"></a><a name="2.4"></a>
-  - [2.4](#whitespace-parms) Algo algo algo.
-
-	> Algo.
-
-	 ```javascript
-    // mal
-    parm();
-
-    // bien
-    parm();
-
-    ```
-
-**[Volver al inicio](#tabla-de-contenidos)**
-
-## Herencia desde Modulos diferentes
-  <a name="herencia-modelos-diferentes"></a><a name="3.1"></a>
-  - [3.1](#herencia-modelos-diferentes) Para este ejemplo tenemos dos modelos donde el Modelo_a ya esta creado y se desea en el Modelo_b poder heredar las vistas agregando un campo.
-    > Primero debemos identificar el xml que posee la vista que deseamos obtener, para este caso heredamos la vista tree y form agregandole un campo en ambas.
-    > Estas dos vistas pertencen al modelo hr_attendance_pro.time_record_event.
-
-   	 ```javascript
-	<record id="hr_attendance_pro_time_record_event_tree_view" model="ir.ui.view">
-		<field name="name">hr_attendance_pro.time_record_event.tree</field>
-		<field name="model">hr_attendance_pro.time_record_event</field>
-                   <field name="arch" type="xml">
-                       <tree editable="bottom" >
-                           <field name="record_id" readonly="1"/>
-                           <field name="date" attrs="{'readonly':[('can_edit','=',False)]}"/>
-                           <field name="year" readonly="1"/>
-                       </tree>
-                    </field>
-        </record>
-
-	<record id="hr_attendance_pro_time_record_event_form_view" model="ir.ui.view">
-		<field name="name">hr_attendance_pro.time_record_event.form</field>
-		<field name="model">hr_attendance_pro.time_record_event</field>
-                   <field name="arch" type="xml">
-                      <form string="Event" version="7.0">
-                        <sheet>
-                          <group>
-                             <group>
-                                <field name="value" required="1" attrs="{'readonly':[('origin','=','rule')]}"/>
-                                <field name="val_unit" readonly="1" options="{'save_readonly':True}"/>
-                             </group>
-                             <group>
-                                 <field name="month"  required="1" attrs="{'readonly':[('origin','=','rule')]}"/>
-                                 <field name="year"  required="1" widget="char" attrs="{'readonly':[('origin','=','rule')]}"/>
-                                 <field name="retroactivo"  readonly="1"/>
-                                 <field name="rule_id" readonly="1"/>
-                             </group>
-                        </group>
-                      </sheet>
-                    </form>
-               </field>
-             </record>
-     
-    ```
-     > Para este ejemplo ya existia time_record.py el cual hereda hr_attendance_pro.time_record_event.
-     > Se agrega 'observaciones' en el modelo time_record.py.
-   	 ```javascript
-	class BPSTimeRecordEvent(models.Model):
-   	 _inherit = "hr_attendance_pro.time_record_event"
-
-    	nombre_completo = fields.Char(comodel_name='hr.employee',related='employee_id.name_related',string=u'Nombre de funcionario')
-    	numero_funcionario = fields.Char(comodel_name='hr.employee',related='employee_id.code',string=u'Número de funcionario')
-    	documento = fields.Char(comodel_name='hr.employee', related='employee_id.identification_id', string=u'Nro. Documento')
-     	//Nuevo campo
-   		observaciones = fields.Text(string=u'Observaciones', required=True)
-     
-    ```
-     > El nombre del id se mantiene lo el codigo que este creado para este caso ya que esta en un modulo bps se le pone ese prefijo y al final 'inherit' haciendo referencia a que es una vista heredada la misma logica para el "name"
-     > El "model" sera el del cual estamos heredando.
-     > En "inherit_id" se ingresa el modelo.id_tree en este caso: hr_attendance_pro.hr_attendance_pro_time_record_event_form_view.
-     > Por ultimo ubicamos el nuevo campo despues del campo "description".
-    ```javascript
-        <record id="bps_hr_attendance_pro_time_record_event_tree_view_inherit" model="ir.ui.view">
-            <field name="name">hr_attendance_pro.time_record.tree.inherit</field>
-            <field name="model">hr_attendance_pro.time_record_event</field>
-            <field name="inherit_id" ref="hr_attendance_pro.hr_attendance_pro_time_record_event_tree_view"/>
-            <field name="arch" type="xml">
-                <field name="description" position="after">
-                    <field name="observaciones" readonly="1"/>
-                </field>
-            </field>
-        </record>
-    ```
-    > Para el form lo ubicamos antes del primer grupo que exista.
-    ```javascript
-        <record id="bps_hr_attendance_pro_time_record_event_form_view_inherit" model="ir.ui.view">
-            <field name="name">hr_attendance_pro.time_record.form.inherit</field>
-            <field name="model">hr_attendance_pro.time_record_event</field>
-            <field name="inherit_id" ref="hr_attendance_pro.hr_attendance_pro_time_record_event_form_view"/>
-            <field name="arch" type="xml">
-                <xpath expr="//group" position="before">
-                    <group>
-                        <field name="observaciones"/>
-                    </group>
-                </xpath>
-            </field>
-        </record>
-    ```
+      Trn:Product
+      Trn:Customer
+	  ```
