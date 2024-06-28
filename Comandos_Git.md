@@ -27,11 +27,10 @@ Guia de comandos de consola en git que pueden ser de ayuda
 ## Comando dos
 
   <a name="Ignorar codificación"></a><a name="1.1"></a>
-  - [1.1](#campo) Comando para cuando se clona un repositorio puede haber errores de codificación de los archivos. Detecta cambios en los ficheros sin haber y no deja rollback.
+  - [1.1](#campo) Comando para cuando pide sslVerify al clonar repositorios.
 
     ```javascript
-    git config core.fileMode false
-
+    $ git -c http.sslVerify=false clone url
     ```
 **[Volver al inicio](#tabla-de-contenidos)**
 
