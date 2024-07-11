@@ -42,13 +42,28 @@ Guia de comandos de consola en git que pueden ser de ayuda
     git config --global http.sslBackend schannel
 
     ```
-    
-## Quarterly Results {.tabset} 
 
-### By Product
+<details>
 
-(tab content)
+<summary>Parte A</summary>  
+### You can add a header
 
-### By Region
+You can add text within a collapsed section. 
 
-(tab content)
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+<summary>Parte B</summary>  
+### You can add a header
+
+You can add text within a collapsed section. 
+
+You can add an image or a code block, too.
+
+```ruby
+   puts "Hello World"
+```
+
+</details>
