@@ -23,6 +23,7 @@ Tratar de unificar en un solo lugar los diferentes documentos que se realizaron 
       - [Configurar Run Debug](#Configurar-Run-Debug)
   1. [Creación de nombres](#Creación-de-nombres)
   1. [Herencia desde Modulos diferentes](#Herencia-desde-Modulos-diferentes)
+  1. [Ciclos para Migracion](#Ciclos-para-Migracion)
   
 ## Armado de ambiente
 
@@ -73,6 +74,7 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
 
   - [1.4](#campo) Descarga e instalación de PostgreSQL 
     - [](#campo) Accedemos a la página y descargamos el PostgreSQL https://www.postgresql.org/download/ y lo instalamos
+    - [](#campo) En la istalacion nos pide que ingresemos un password para el usuario "postgres" que sera el master de la DB y por defecto asigna el numero de puerto 5432, en caso de modificar este recordar asignar ese puerto en el archivo .conf
     - [](#campo) Al finalizar la instalación debemos detener el servicio ya que necesitamos que se ejecute a través del ide
     - [Linux](#campo) Detener el servicio para después quitar de la lista de ejecutados automáticos
       ```javascript
@@ -80,6 +82,14 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
         sudo systemctl disable odoo
       ```
     - [Windows](#campo) Accedemos a Servicios, buscamos "PostgreSQL" y deshabilitamos el inicio automático.
+    - [](#campo) Luego creamos un usuario con los permisos a la base iguales al usuario postgres que se crea por defecto al instalar, esto es necesario ya que en el archivo .conf de odoo debemos configurar el db_user y este no puede ser el usuario postgres
+    ```javascript
+        //Crear usuario
+        CREATE USER username WITH PASSWORD 'MYPASS';
+        //Darle permisos de super
+        ALTER USER odoo WITH CREATEDB CREATEROLE REPLICATION BYPASSRLS;
+      ```
+    
 
 **[Volver al inicio](#tabla-de-contenidos)**
 
@@ -131,14 +141,17 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
     - [](#campo) Luego de que tenemos nuestro archivo .conf desde la parte superior del IDE en la flechita que se encuentra en Current File > Edit Configurations accedemos a el y se abrira una ventana
     - [](#campo) Seleccionamos + y nos muestra una lista de la cual seleccionamos Python
     - [](#campo) Se abre una ventana y en ella debe quedar seleccionado las siguientes opciones
-          - [](#campo) Creamos un nombre
-          - [](#campo) Debe quedar seleccionado el Python del venv que creamos
-          - [](#campo) En script seleccionamos el odoo.bin que se encuentra en la carpeta odoo del código fuente
-          - [](#campo) En script parameters debe quedar -c y la dirección de acceso a nuestro archivo conf
-            ```javascript
-              -c "C:\Proyectos\bps\server-config.conf"
-            ```
+      - [](#campo) Creamos un nombre
+      - [](#campo) Debe quedar seleccionado el Python del venv que creamos
+      - [](#campo) En script seleccionamos el odoo.bin que se encuentra en la carpeta odoo del código fuente
+      - [](#campo) En script parameters debe quedar -c y la dirección de acceso a nuestro archivo conf
+        ```javascript
+          -c "C:\Proyectos\bps\server-config.conf"
+        ```
     - [](#campo) Por último seleccionamos Run para correr el ambiente local
+    - [](#campo) En caso de no haber errores, nos dirigimos al navegador y accedemos a la url localhost:8080
+    - [](#campo) Seguimos los pasos que nos muestra para crear la DB
+    - [](#campo) En el archivo .conf en el addons_path agregamos las carpetas de nuestro proyecto para que estos puedan ser instalados como aplicaciones, tambien agregamos las carpetas addons y odoo del codigo fuente de odoo
 
 ## Creación de nombres
 
@@ -235,3 +248,18 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
       Trn:Customer
 	  ```
     
+## Ciclos para Migracio
+
+- [1.1](#campo) Hay momentos donde se necesita migrar el código de versiones viejas a nuevas, la organización del equipo de desarrollo y un claro procedimiento es fundamentalmente para hacer un seguimiento ordenado de todo el proceso de migración
+- [1.2](#campo) En este ejemplo se aborda un ejemplo implementado en Redmine para la migración de BPS realizada en el 2024
+  - [](#campo) Al asignar una petición a un desarrollador se hace en estado "En Construcción" y subestado "CT - Asignado para desarrollo"
+  - [](#campo) Cuando se comienza el desarrollo el desarrollador pasa a subestado "CT - En desarrollo" y agrega el tag “Fase 1”. En “Fase 1” se migra todo el código que no genere conflictos en el siguiente orden:
+    - [](#campo) Migrar manifiesto y .py
+    - [](#campo) Migrar grupos, roles, reglas y access
+    - [](#campo) Migrar vistas y menús 
+    - [](#campo) Deseable pero no requerido que se pueda instalar el addon
+  - [](#campo) Finalizado el paso anterior se quita el tag “Fase 1”, se agrega el tag “Fase 2”, se agrega una nota con los conflictos encontrados o elementos que hayan quedado pendientes y se mueve la petición al grupo “Gestión técnica”
+  - [](#campo) Se vuelve a asignar la petición a un desarrollador para completar la “Fase 2”. Esta fase consiste en resolver todos los conflictos encontrados en la “Fase 1”. Requerido que se pueda instalar el addon
+  - [](#campo) Finalizado el paso anterior se quita el tag “Fase 2”, se agrega el tag “Fase 3”, se agrega una nota con los conflictos que puedan permanecer y se mueve la petición al grupo “Gestión técnica”
+  - [](#campo) Se vuelve a asignar la petición a un desarrollador para completar la “Fase 3”. Esta fase consiste en comparar odoo9 vs odoo17, resultado y vistas. Este paso es acompañado por la documentación funcional
+  - [](#campo) Finalizado el paso anterior se quita el tag “Fase 3”, se agrega una nota con las decisiones tomadas, testeos realizados, en caso de ser necesario se hace el diseño técnico y se cambia el subestado a “CT – Desarrollo Finalizado” y se mueve la petición al grupo “Gestión técnica”
