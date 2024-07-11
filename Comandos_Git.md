@@ -23,47 +23,21 @@ Guia de comandos de consola en git que pueden ser de ayuda
 
     ```
 
-## SSL certificate problem {.tabset} 
+## SSL certificate problem
 
-### Linux
 <a name="SSL certificate problem"></a><a name="1.1"></a>
   - [1.1](#campo) Podemos recibir el mensaje con este error al intentar hacer commit: SSL certificate problem: self-signed certificate in certificate chain error in GIT. Para solucionarlo podemos abrir una consola de git dónde está nuestro proyecto y ejecutar la siguiente línea de comando 
 
-    ```javascript
-    git config --global http.sslCAInfo /path/to/ca.pem
+  <details>
+  <summary>Linux</summary> 
 
-    ```
+    '''git config --global http.sslCAInfo /path/to/ca.pem'''
 
-### Windows
-<a name="SSL certificate problem"></a><a name="1.1"></a>
-  - [1.1](#campo) Podemos recibir el mensaje con este error al intentar hacer commit: SSL certificate problem: self-signed certificate in certificate chain error in GIT. Para solucionarlo podemos abrir una consola de git dónde está nuestro proyecto y ejecutar la siguiente línea de comando 
+  </details>
 
-    ```javascript
-    git config --global http.sslBackend schannel
+  <details>
+  <summary>Windows</summary> 
 
-    ```
+    '''git config --global http.sslBackend schannel'''
 
-<details>
-
-<summary>Parte A</summary>  
-### You can add a header
-
-You can add text within a collapsed section. 
-
-You can add an image or a code block, too.
-
-```ruby
-   puts "Hello World"
-```
-<summary>Parte B</summary>  
-### You can add a header
-
-You can add text within a collapsed section. 
-
-You can add an image or a code block, too.
-
-```ruby
-   puts "Hello World"
-```
-
-</details>
+  </details>
