@@ -255,7 +255,7 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
 ## Ciclos para Migración
 
 - [1.1](#campo) Hay momentos donde se necesita migrar el código de versiones viejas a nuevas, la organización del equipo de desarrollo y un claro procedimiento es fundamentalmente para hacer un seguimiento ordenado de todo el proceso de migración
-- [1.2](#campo) En este ejemplo se aborda un ejemplo implementado en Redmine para la migración de BPS realizada en el 2024
+- [1.2](#campo) En este ejemplo se aborda lo implementado en Redmine para la migración de BPS realizada en el 2024
   - [](#campo) Al asignar una petición a un desarrollador se hace en estado "En Construcción" y subestado "CT - Asignado para desarrollo"
   - [](#campo) Cuando se comienza el desarrollo el desarrollador pasa a subestado "CT - En desarrollo" y agrega el tag “Fase 1”. En “Fase 1” se migra todo el código que no genere conflictos en el siguiente orden:
     - [](#campo) Migrar manifiesto y .py
