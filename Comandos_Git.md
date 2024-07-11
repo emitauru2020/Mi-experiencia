@@ -76,3 +76,15 @@ Guia de comandos de consola en git que pueden ser de ayuda
     git config core.fileMode false
 
     ```
+
+  <a name="SSL certificate problem"></a><a name="1.1"></a>
+  - [1.1](#campo) Podemos recibir el mensaje con este error al intentar hacer commit: SSL certificate problem: self-signed certificate in certificate chain error in GIT. Para solucionarlo podemos abrir una consola de git dónde está nuestro proyecto y ejecutar la siguiente línea de comando 
+
+    ```javascript
+    //Linux
+    git config --global http.sslCAInfo /path/to/ca.pem
+    //Linux
+    git config --global http.sslBackend schannel
+
+    ```
+    

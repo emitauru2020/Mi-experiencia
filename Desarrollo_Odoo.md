@@ -23,7 +23,7 @@ Tratar de unificar en un solo lugar los diferentes documentos que se realizaron 
       - [Configurar Run Debug](#Configurar-Run-Debug)
   1. [Creación de nombres](#Creación-de-nombres)
   1. [Herencia desde Modulos diferentes](#Herencia-desde-Modulos-diferentes)
-  1. [Ciclos para Migracion](#Ciclos-para-Migracion)
+  1. [Ciclos para Migración](#Ciclos-para-Migración)
   
 ## Armado de ambiente
 
@@ -153,6 +153,8 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
     - [](#campo) Seguimos los pasos que nos muestra para crear la DB
     - [](#campo) En el archivo .conf en el addons_path agregamos las carpetas de nuestro proyecto para que estos puedan ser instalados como aplicaciones, tambien agregamos las carpetas addons y odoo del codigo fuente de odoo
 
+**[Volver al inicio](#tabla-de-contenidos)**
+
 ## Creación de nombres
 
   - [1.1](#campo) Se debe ser descriptivo con los nombres de los campos. El nombre debe ser autodescriptivo.
@@ -247,8 +249,10 @@ La contenedora con el nombre de la versión de Odoo por ejemplo "17.0" y dentro 
       Trn:Product
       Trn:Customer
 	  ```
-    
-## Ciclos para Migracio
+
+## Herencia desde Modulos diferentes
+
+## Ciclos para Migración
 
 - [1.1](#campo) Hay momentos donde se necesita migrar el código de versiones viejas a nuevas, la organización del equipo de desarrollo y un claro procedimiento es fundamentalmente para hacer un seguimiento ordenado de todo el proceso de migración
 - [1.2](#campo) En este ejemplo se aborda un ejemplo implementado en Redmine para la migración de BPS realizada en el 2024
