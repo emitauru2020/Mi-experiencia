@@ -188,7 +188,7 @@ estuve involucrado:
 
 ## Creación de nombres
 
-**1.1** Se debe ser descriptivo con los nombres de los campos. El nombre debe ser autodescriptivo.
+- **1.1** Se debe ser descriptivo con los nombres de los campos. El nombre debe ser autodescriptivo.
 
   ```text
   mal
@@ -200,29 +200,32 @@ estuve involucrado:
 
 ## Herencia desde Modulos diferentes
 
+- Para hacer
+
 ## Ciclos para Migración
 
-**1.1** Hay momentos donde se necesita migrar el código de versiones viejas a nuevas, la organización del equipo
+- **1.1** Hay momentos donde se necesita migrar el código de versiones viejas a nuevas, la organización del equipo
   de desarrollo y un claro procedimiento es fundamentalmente para hacer un seguimiento ordenado de todo el proceso de
-  migración
-**1.2** En este ejemplo se aborda lo implementado en Redmine para la migración de BPS realizada en el 2024
-    **** Al asignar una petición a un desarrollador se hace en estado "En Construcción" y subestado "CT -
-      Asignado para desarrollo"
-    **** Cuando se comienza el desarrollo el desarrollador pasa a subestado "CT - En desarrollo" y agrega el tag
+  migración.
+
+- **1.2** En este ejemplo se aborda lo implementado en Redmine para la migración de BPS realizada en el 2024
+    - Al asignar una petición a un desarrollador se hace en estado "En Construcción" y subestado "CT -
+      Asignado para desarrollo".
+    - Cuando se comienza el desarrollo el desarrollador pasa a subestado "CT - En desarrollo" y agrega el tag
       “Fase 1”. En “Fase 1” se migra todo el código que no genere conflictos en el siguiente orden:
-        **** Migrar manifiesto y .py
-        **** Migrar grupos, roles, reglas y access
-        **** Migrar vistas y menús
-        **** Deseable pero no requerido que se pueda instalar el addon
-    **** Finalizado el paso anterior se quita el tag “Fase 1”, se agrega el tag “Fase 2”, se agrega una nota con
-      los conflictos encontrados o elementos que hayan quedado pendientes y se mueve la petición al grupo “Gestión
-      técnica”
-    **** Se vuelve a asignar la petición a un desarrollador para completar la “Fase 2”. Esta fase consiste en
-      resolver todos los conflictos encontrados en la “Fase 1”. Requerido que se pueda instalar el addon
-    **** Finalizado el paso anterior se quita el tag “Fase 2”, se agrega el tag “Fase 3”, se agrega una nota con
-      los conflictos que puedan permanecer y se mueve la petición al grupo “Gestión técnica”
-    **** Se vuelve a asignar la petición a un desarrollador para completar la “Fase 3”. Esta fase consiste en
-      comparar odoo9 vs odoo17, resultado y vistas. Este paso es acompañado por la documentación funcional
-    **** Finalizado el paso anterior se quita el tag “Fase 3”, se agrega una nota con las decisiones tomadas,
-      testeos realizados, en caso de ser necesario se hace el diseño técnico y se cambia el subestado a “CT – Desarrollo
-      Finalizado” y se mueve la petición al grupo “Gestión técnica”
+      - Migrar manifiesto y .py.
+      - Migrar grupos, roles, reglas y access.
+      - Migrar vistas y menús.
+      - Deseable pero no requerido que se pueda instalar el addon.
+      - Finalizado el paso anterior se quita el tag “Fase 1”, se agrega el tag “Fase 2”, se agrega una nota con
+        los conflictos encontrados o elementos que hayan quedado pendientes y se mueve la petición al grupo “Gestión
+        técnica”.
+      - Se vuelve a asignar la petición a un desarrollador para completar la “Fase 2”. Esta fase consiste en
+        resolver todos los conflictos encontrados en la “Fase 1”. Requerido que se pueda instalar el addon.
+      - Finalizado el paso anterior se quita el tag “Fase 2”, se agrega el tag “Fase 3”, se agrega una nota con
+        los conflictos que puedan permanecer y se mueve la petición al grupo “Gestión técnica”
+      - Se vuelve a asignar la petición a un desarrollador para completar la “Fase 3”. Esta fase consiste en
+        comparar odoo9 vs odoo17, resultado y vistas. Este paso es acompañado por la documentación funcional
+      - Finalizado el paso anterior se quita el tag “Fase 3”, se agrega una nota con las decisiones tomadas,
+        testeos realizados, en caso de ser necesario se hace el diseño técnico y se cambia el subestado a “CT – Desarrollo
+        Finalizado” y se mueve la petición al grupo “Gestión técnica”.
