@@ -175,9 +175,9 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
 *1.2* Espacios
     - Para una mayor claridad en la lectura del código, se debe dejar un espacio después de la coma que separa los
       parámetros.
-      ```
+    ```
         Parm(InOut: &Name, InOut: &UserId, in: &InvoiceId);
-      ```
+    ```
 
 *1.3* Comillas
     - Es recomendable utilizar comillas simples ('...') por defecto para estandarizar el código y mejorar su
@@ -187,20 +187,18 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
 *1.4* Comentarios
     - Los comentarios son de gran ayuda para entender el código y facilitar su mantenimiento. Es importante incluir
       comentarios en el código para que otros desarrolladores puedan comprenderlo más fácilmente.
-    - En las líneas que corresponda se puede comentar el funcionamiento explicando que hace ese fragmento de código, a
-      qué procesos llama, etc.
-      ```
+    - En las líneas que corresponda se puede comentar el funcionamiento explicando que hace ese fragmento de código, a qué procesos llama, etc.
+          ```
         // Recorro la tabla con numeradores [InvNumeradores]
             For Each
               Where InvoiceId   = &InvoiceId
               Where UserId      = &UserId
               Defined By NumUltInv
-      
               NumUltInv   = NumUltInv + 1
               &NumUltInv  = NumUltInv
-      
-        // Se crea nuevo número de invoice 
-      ```
+        // Se crea nuevo número de invoice
+            Sigue el codigo...
+          ```
 
 *1.5* Subrutinas
     -En ocasiones, podemos encontrarnos con fragmentos de código que se repiten en distintas partes de nuestra
