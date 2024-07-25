@@ -13,10 +13,14 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
 
 ## Indice
 
-1. [Definición de nombres para elementos de la KB](#definición-de-nombres-para-elementos-de-la-kb)
-2. [Código en la KB](#código-en-la-kb)
-3. [Probar tu código](#probar-tu-código)
-4. [Control de versiones](#control-de-versiones)
+- [Estandares de desarrollo GeneXus](#estandares-de-desarrollo-genexus)
+  - [Intro](#intro)
+  - [Indice](#indice)
+  - [Definición de nombres para elementos de la KB](#definición-de-nombres-para-elementos-de-la-kb)
+  - [Código en la KB](#código-en-la-kb)
+  - [Probar tu código](#probar-tu-código)
+  - [Commit on exit](#commit-on-exit)
+  - [Control de versiones](#control-de-versiones)
 
 ## Definición de nombres para elementos de la KB
 
