@@ -18,9 +18,6 @@ estuve involucrado:
 ## Tabla de Contenidos
 
 - [Guia para el desarrollo en Odoo](#guia-para-el-desarrollo-en-odoo)
-  - [Intro](#intro)
-  - [Objetivo](#objetivo)
-  - [Tabla de Contenidos](#tabla-de-contenidos)
   - [Armado de ambiente](#armado-de-ambiente)
   - [Estructura de Carpetas](#estructura-de-carpetas)
   - [Clonar Odoo Server](#clonar-odoo-server)
@@ -29,9 +26,9 @@ estuve involucrado:
   - [Instalar Python](#instalar-python)
   - [Entornos Virtuales](#entornos-virtuales)
   - [Configurar Run Debug](#configurar-run-debug)
-  - [Creación de nombres](#creación-de-nombres)
-  - [Herencia desde Modulos diferentes](#herencia-desde-modulos-diferentes)
-  - [Ciclos para Migración](#ciclos-para-migración)
+- [Creación de nombres](#creación-de-nombres)
+- [Herencia desde Modulos diferentes](#herencia-desde-modulos-diferentes)
+- [Ciclos para Migración](#ciclos-para-migración)
 
 ## Armado de ambiente
 
