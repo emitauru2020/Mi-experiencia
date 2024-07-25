@@ -13,240 +13,237 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
 
 ## Indice
 
-1. [Definición de nombres para elementos de la KB](#Definicion-nombres)
-2. [Código en la KB](#Código-en-la-KB)
-3. [Probar tu código](#Probar-tu-código)
-4. [Control de versiones](#Control-de-versiones)
+1. [Definición de nombres para elementos de la KB](#definición-de-nombres-para-elementos-de-la-kb)
+2. [Código en la KB](#código-en-la-kb)
+3. [Probar tu código](#probar-tu-código)
+4. [Control de versiones](#control-de-versiones)
 
 ## Definición de nombres para elementos de la KB
 
-- [1.1](#campo) Atributos
-    - Los nombres de los objetos deben ser descriptivos y abreviados en caso de ser necesario, siempre manteniendo una
+- *1.1* Atributos
+  - Los nombres de los objetos deben ser descriptivos y abreviados en caso de ser necesario, siempre manteniendo una
       clara interpretación de su función.
-    - Tomar como referencia [nomenclatura GIK](http://wiki.genexus.com/commwiki/servlet/wiki?1872,GIK), es un estándar
+  - Tomar como referencia [nomenclatura GIK](http://wiki.genexus.com/commwiki/servlet/wiki?1872,GIK), es un estándar
       definido por GeneXus para definir los nombres de atributos.
       > Nota: El orden de la sintaxis aplica para lenguas en las que los adjetivos se colocan después del sustantivo. Si
       el nombre del atributo se define en inglés, eso es al revés, por lo que la Categoría (el sustantivo) va al final.
-  ```
-  //Mal
-    Numbersupplierinvoice
-    Invsupnum
-    PhoneCustomerNumber
-    NumPhoCus
+        ```
+      //Mal
+        Numbersupplierinvoice
+        Invsupnum
+        PhoneCustomerNumber
+        NumPhoCus
 
-  //Bien
-    SupInvNum
-    CusPhoNum
+      //Bien
+        SupInvNum
+        CusPhoNum
   
-  //Mejor
-    SupplierInvoiceNumber
-    CustomerPhoneNumber
-  ```
-    - Estilo de nomenclatura CamelCase para los nombres de objetos, el cual consiste en escribir las palabras juntas con
-      la primera letra de cada una en mayúscula.
-  ```
-  //Mal
-    supinvnum
-    supplierinvoicenumber
+      //Mejor
+        SupplierInvoiceNumber
+        CustomerPhoneNumber
+          ```
+  - Estilo de nomenclatura CamelCase para los nombres de objetos, el cual consiste en escribir las palabras juntas con la primera letra de cada una en mayúscula.
+        ```
+      //Mal
+        supinvnum
+        supplierinvoicenumber
+    
+      //Bien
+        SupInvNum
+        SupplierInvoiceNumber
+          ```
 
-  //Bien
-    SupInvNum
-    SupplierInvoiceNumber
-  ```
-
-- [1.2](#campo) Transacciones
+*1.2* Transacciones
     - Los objetos de tipo Transacción deben ser creados con el nombre de la entidad en singular, agregando una
       descripción clara y concisa para su identificación.
     - Se deben definir en singular ya que es mejor para trabajar
       con [Business Component](http://wiki.genexus.com/commwiki/servlet/wiki?5846,Toc%3ABusiness+Component). También es
       requerimiento de algunos patterns GeneXus para su correcta visualización como por ejemplo K2BTools.
-  ```
-  //Mal
-    trn: Invoices
-    trn: Countries
-    trn: Suppliers
+      ```
+      //Mal
+        trn: Invoices
+        trn: Countries
+        trn: Suppliers
+    
+      //Bien
+        trn: Invoice
+        trn: Country
+        trn: Supplier
+      ```
 
-  //Bien
-    trn: Invoice
-    trn: Country
-    trn: Supplier
-  ```
-
-- [1.3](#campo) Procedimientos
+*1.3* Procedimientos
     - Para los procedimientos, se recomienda utilizar una nomenclatura que incluya la acción, la entidad y el atributo
       en su nombre. Los nombres más comunes son Get, Insert, Update, Load (SDT), Delete y Set.
-  ```
-  //Inserta
-    proc: InsertCountry
-    proc: InsCountry
+      ```
+      //Inserta
+        proc: InsertCountry
+        proc: InsCountry
+    
+      //Obtiene
+        proc: GetCountryName
+      
+      //Setea
+        proc: SetCountryName
+      
+      //Actualiza
+        proc: UpdateCountry
+      
+      //Proc que borra
+        proc: DeleteCountry
+        proc: DelCountry
+      ```  
 
-  //Obtiene
-    proc: GetCountryName
-  
-  //Setea
-    proc: SetCountryName
-  
-  //Actualiza
-    proc: UpdateCountry
-  
-  //Proc que borra
-    proc: DeleteCountry
-    proc: DelCountry
-  ```  
-
-- [1.4](#campo) Variables
+*1.4* Variables
     - Las Variables deben comenzar con minúscula después del & y ser lo más descriptivas posibles, lo deseable es que el
       nombre este formado por la referencia y descripcion.
-  ```
-  //Mal
-    &CustName
-    &CountryName
+      ```
+      //Mal
+        &CustName
+        &CountryName
+    
+      //Bien
+        &custName
+        &countryName
+      ```
 
-  //Bien
-    &custName
-    &countryName
-  ```
-
-- [1.5](#campo) Underscore
+*1.5* Underscore
     - Es importante evitar el uso de guiones bajos (_) al inicio de los nombres de objetos, ya que esto puede causar
       conflictos o errores en la aplicación.
-  ```
-  //Mal
-    &invNum_
-    &_invNum
-    trn: _Invoice
-    proc: _GetCountryName
+      ```
+      //Mal
+        &invNum_
+        &_invNum
+        trn: _Invoice
+        proc: _GetCountryName
+    
+      //Bien
+        &invNum
+        trn: Invoice
+        proc: GetCountryName
+      ```
 
-  //Bien
-    &invNum
-    trn: Invoice
-    proc: GetCountryName
-  ```
-
-- [1.6](#campo) MasterPage
+*1.6* MasterPage
     - Para los elementos Master page, se debe usar las letras MP al inicio del nombre, seguidas del nombre del objeto
       correspondiente.
   > Ejemplo de nombre para Master page: MPHome
 
-
-- [1.7](#campo) WebPanel
+*1.7* WebPanel
     - Para los Web Panels, se debe usar el nombre del objeto correspondiente y al final se deben añadir las letras WP
       como referencia.
   > Ejemplo de nombre para WebPanel: ContactWP
 
-
-- [1.8](#campo) Tipos de datos estructurados (SDT)
+*1.8* Tipos de datos estructurados (SDT)
     - Los Structured Data Type deben nombrarse con las primeras tres letras SDT en mayúscula y la referencia del objeto
       del cual va a manejar.
-  ```
-  //Ejemplo
-    SDTUser
-    SDTSeller
-    SDTCustomer
-  ```
+      ```
+      //Ejemplo
+        SDTUser
+        SDTSeller
+        SDTCustomer
+      ```
 
-- [1.9](#campo) Data Providers (DP)
+*1.9* Data Providers (DP)
     - Los Data Providers deben ser nombrados con las primeras dos letras DP y la referencia del objeto.
-  ```
-  //Ejemplo
-    DPSlideMenu
-    DPInvoiceComposition
-  ```
+      ```
+      //Ejemplo
+        DPSlideMenu
+        DPInvoiceComposition
+      ```
 
-- [1.10](#campo) Data Selector (DS)
+*1.10* Data Selector (DS)
     - Los Data Selector deben nombrarse con las primeras dos letras DS y la referencia del objeto al cual va manejar.
 
-**[Volver al inicio](#Indice)**
+**[Volver al inicio](#indice)**
 
 ## Código en la KB
 
-- [1.1](#campo) Tabulador
+*1.1* Tabulador
     - En lugar de usar espacios antes de la comparación, es recomendable utilizar el tabulador (tab) para mejorar la
       legibilidad del código y facilitar su desarrollo y mantenimiento. En Genexus, se puede configurar la cantidad de
       espacios que corresponden a un tabulador.
-  ```
-  //Ejemplo
-    TextblockNombre.Class                   = ThemeClass:TexBlockTabReqOFF
-    TextblockApellido.Class                 = ThemeClass:TexBlockTabReqOFF
-    TextblockObservaciones.Class            = ThemeClass:TexBlockTabReqOFF
-    TextblockControlCalidadrimario.Class    = ThemeClass:TexBlockTabReqOFF
-    TextblockTipoDocumento.Class            = ThemeClass:TexBlockTabReqOFF
-    TextblockGradoPersona.Class             = ThemeClass:TexBlockTabReqOFF
-    TextblockFecha.Class                    = ThemeClass:TexBlockTabReqOFF
-  ```
+      ```
+      //Ejemplo
+        TextblockNombre.Class                   = ThemeClass:TexBlockTabReqOFF
+        TextblockApellido.Class                 = ThemeClass:TexBlockTabReqOFF
+        TextblockObservaciones.Class            = ThemeClass:TexBlockTabReqOFF
+        TextblockControlCalidadrimario.Class    = ThemeClass:TexBlockTabReqOFF
+        TextblockTipoDocumento.Class            = ThemeClass:TexBlockTabReqOFF
+        TextblockGradoPersona.Class             = ThemeClass:TexBlockTabReqOFF
+        TextblockFecha.Class                    = ThemeClass:TexBlockTabReqOFF
+      ```
 
-- [1.2](#campo) Espacios
+*1.2* Espacios
     - Para una mayor claridad en la lectura del código, se debe dejar un espacio después de la coma que separa los
       parámetros.
-  ```
-    Parm(InOut: &Name, InOut: &UserId, in: &InvoiceId);
-  ```
+      ```
+        Parm(InOut: &Name, InOut: &UserId, in: &InvoiceId);
+      ```
 
-- [1.3](#campo) Comillas
+*1.3* Comillas
     - Es recomendable utilizar comillas simples ('...') por defecto para estandarizar el código y mejorar su
       legibilidad.
     -
 
-- [1.4](#campo) Comentarios
+*1.4* Comentarios
     - Los comentarios son de gran ayuda para entender el código y facilitar su mantenimiento. Es importante incluir
       comentarios en el código para que otros desarrolladores puedan comprenderlo más fácilmente.
     - En las líneas que corresponda se puede comentar el funcionamiento explicando que hace ese fragmento de código, a
       qué procesos llama, etc.
-  ```
-    // Recorro la tabla con numeradores [InvNumeradores]
-        For Each
-          Where InvoiceId   = &InvoiceId
-          Where UserId      = &UserId
-          Defined By NumUltInv
-  
-          NumUltInv   = NumUltInv + 1
-          &NumUltInv  = NumUltInv
-  
-    // Se crea nuevo número de invoice 
-  ```
+      ```
+        // Recorro la tabla con numeradores [InvNumeradores]
+            For Each
+              Where InvoiceId   = &InvoiceId
+              Where UserId      = &UserId
+              Defined By NumUltInv
+      
+              NumUltInv   = NumUltInv + 1
+              &NumUltInv  = NumUltInv
+      
+        // Se crea nuevo número de invoice 
+      ```
 
-- [1.5](#campo) Subrutinas
-    - En ocasiones, podemos encontrarnos con fragmentos de código que se repiten en distintas partes de nuestra
+*1.5* Subrutinas
+    -En ocasiones, podemos encontrarnos con fragmentos de código que se repiten en distintas partes de nuestra
       aplicación. Cuando esto sucede, es importante evitar duplicar el código y en su lugar, utilizar subrutinas o
       procedimientos para generalizar la funcionalidad. Es importante que los nombres de estas subrutinas y
       procedimientos sean descriptivos y permitan entender rápidamente su funcionalidad. Las subrutinas deben ser
       utilizadas para código que es específico de un objeto, mientras que los procedimientos son adecuados para código
       que es utilizado por varios objetos.
 
-- [1.6](#campo) Referenciar desarrollo correctivo
-    - Cuando realizamos cambios en el código, es importante dejar un registro que permita entender el motivo de dicha
+*1.6* Referenciar desarrollo correctivo
+    -Cuando realizamos cambios en el código, es importante dejar un registro que permita entender el motivo de dicha
       modificación. Una buena práctica es incluir comentarios en la línea correspondiente, indicando la Iniciales, fecha
       y el número de incidente asociado del sistema de seguimiento de incidencias. De esta manera, cualquier persona que
       trabaje en el código en el futuro podrá entender la razón detrás de la modificación.
-  ```
-    // eds - 28/12/2022 - incidente 48523 - Obtengo el próximo número de invoice 
-  ```
-- [1.7](#campo) Tablas Base en Grillas
+          ```
+            // eds - 28/12/2022 - incidente 48523 - Obtengo el próximo número de invoice 
+          ```
+*1.7* Tablas Base en Grillas
     - Siempre que sea posible, debemos utilizar grillas de tabla base. Esto nos permite aprovechar al máximo la
       funcionalidad de Genexus y reducir el tiempo de desarrollo y mantenimiento de nuestra aplicación.
 
-- [1.8](#campo) Cerrar Sesiones
+*1.8* Cerrar Sesiones
     - Es importante tener en cuenta que cada vez que se utiliza una web sesión con una clave, se debe cerrar
       adecuadamente la instancia correspondiente utilizando el método session.remove() de la clave. De lo contrario, se
       pueden generar problemas de seguridad y/o recursos.
-  ```
-    //Obtener codigo de Invoice
-    &SDTInvoice.FromJson(&ws.Get('&SDTInvoice'))
-
-    //Cierro sesión
-    &ws.Remove('&SDTInvoice')
-  ```
-- [1.9](#campo) Parametrizar
+        ```
+        //Obtener codigo de Invoice
+        &SDTInvoice.FromJson(&ws.Get('&SDTInvoice'))
+        
+        //Cierro sesión
+        &ws.Remove('&SDTInvoice')
+        ```
+*1.9* Parametrizar
     - Siempre se debe tratar de parametrizar el código en la medida de lo posible. De lo contrario, es probable que en
       el futuro se requieran cambios en el código. Esto puede generar tiempos de inactividad innecesarios del sistema en
       producción.
 
-- [1.10](#campo) Warnings
+*1.10* Warnings
     - Es recomendable revisar periódicamente los warnings generados por el código para minimizar las probabilidades de
       fallos y mejorar el rendimiento de la aplicación. Los warnings pueden indicar desde errores de sintaxis hasta
       problemas de rendimiento, por lo que su corrección es fundamental.
 
-**[Volver al inicio](#Indice)**
+**[Volver al inicio](#indice)**
 
 ## Probar tu código
 

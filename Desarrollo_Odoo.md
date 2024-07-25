@@ -17,17 +17,17 @@ estuve involucrado:
 
 ## Tabla de Contenidos
 
-1. [Armado de ambiente](#Armado-de-ambiente)
-    - [Estructura de Carpetas](#Estructura-de-Carpetas)
-    - [Clonar Odoo Server](#Clonar-Odoo-Server)
-    - [Pycharm](#Pycharm)
-    - [PostgreSQL](#PostgreSQL)
-    - [Instalar Python](#Instalar-Python)
-    - [Entornos Virtuales](#Entornos-Virtuales)
-    - [Configurar Run Debug](#Configurar-Run-Debug)
-2. [Creación de nombres](#Creación-de-nombres)
-3. [Herencia desde Modulos diferentes](#Herencia-desde-Modulos-diferentes)
-4. [Ciclos para Migración](#Ciclos-para-Migración)
+1. [Armado de ambiente](#armado-de-ambiente)
+    - [Estructura de Carpetas](#estructura-de-carpetas)
+    - [Clonar Odoo Server](#clonar-odoo-server)
+    - [Pycharm](#pycharm)
+    - [PostgreSQL](#postgresql)
+    - [Instalar Python](#instalar-python)
+    - [Entornos Virtuales](#entornos-virtuales)
+    - [Configurar Run Debug](#configurar-run-debug)
+2. [Creación de nombres](#creación-de-nombres)
+3. [Herencia desde Modulos diferentes](#herencia-desde-modulos-diferentes)
+4. [Ciclos para Migración](#ciclos-para-migración)
 
 ## Armado de ambiente
 
