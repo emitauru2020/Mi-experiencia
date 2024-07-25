@@ -13,10 +13,10 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
 
 ## Indice
 
-1. [Definición de nombres para elementos de la KB](#Definicion_nombres)
-2. [Código en la KB](#Código_en_la_KB)
-3. [Probar tu código](#Probar_tu_código)
-4. [Control de versiones](#Control_de_versiones)
+1. [Definición de nombres para elementos de la KB](#Definicion-nombres)
+2. [Código en la KB](#Código-en-la-KB)
+3. [Probar tu código](#Probar-tu-código)
+4. [Control de versiones](#Control-de-versiones)
 
 ## Definición de nombres para elementos de la KB
 
@@ -28,28 +28,28 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
       > Nota: El orden de la sintaxis aplica para lenguas en las que los adjetivos se colocan después del sustantivo. Si
       el nombre del atributo se define en inglés, eso es al revés, por lo que la Categoría (el sustantivo) va al final.
   ```
-  * Mal
+  //Mal
     Numbersupplierinvoice
     Invsupnum
     PhoneCustomerNumber
     NumPhoCus
 
-  * Bien
+  //Bien
     SupInvNum
     CusPhoNum
   
-  * Mejor
+  //Mejor
     SupplierInvoiceNumber
     CustomerPhoneNumber
   ```
     - Estilo de nomenclatura CamelCase para los nombres de objetos, el cual consiste en escribir las palabras juntas con
       la primera letra de cada una en mayúscula.
   ```
-  * Mal
+  //Mal
     supinvnum
     supplierinvoicenumber
 
-  * Bien
+  //Bien
     SupInvNum
     SupplierInvoiceNumber
   ```
@@ -61,12 +61,12 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
       con [Business Component](http://wiki.genexus.com/commwiki/servlet/wiki?5846,Toc%3ABusiness+Component). También es
       requerimiento de algunos patterns GeneXus para su correcta visualización como por ejemplo K2BTools.
   ```
-  * Mal
+  //Mal
     trn: Invoices
     trn: Countries
     trn: Suppliers
 
-  * Bien
+  //Bien
     trn: Invoice
     trn: Country
     trn: Supplier
@@ -76,20 +76,20 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
     - Para los procedimientos, se recomienda utilizar una nomenclatura que incluya la acción, la entidad y el atributo
       en su nombre. Los nombres más comunes son Get, Insert, Update, Load (SDT), Delete y Set.
   ```
-  * Inserta
+  //Inserta
     proc: InsertCountry
     proc: InsCountry
 
-  * Obtiene
+  //Obtiene
     proc: GetCountryName
   
-  * Setea
+  //Setea
     proc: SetCountryName
   
-  * Actualiza
+  //Actualiza
     proc: UpdateCountry
   
-  * Proc que borra
+  //Proc que borra
     proc: DeleteCountry
     proc: DelCountry
   ```  
@@ -98,11 +98,11 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
     - Las Variables deben comenzar con minúscula después del & y ser lo más descriptivas posibles, lo deseable es que el
       nombre este formado por la referencia y descripcion.
   ```
-  * Mal
+  //Mal
     &CustName
     &CountryName
 
-  * Bien
+  //Bien
     &custName
     &countryName
   ```
@@ -111,13 +111,13 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
     - Es importante evitar el uso de guiones bajos (_) al inicio de los nombres de objetos, ya que esto puede causar
       conflictos o errores en la aplicación.
   ```
-  * Mal
+  //Mal
     &invNum_
     &_invNum
     trn: _Invoice
     proc: _GetCountryName
 
-  * Bien
+  //Bien
     &invNum
     trn: Invoice
     proc: GetCountryName
@@ -139,17 +139,16 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
     - Los Structured Data Type deben nombrarse con las primeras tres letras SDT en mayúscula y la referencia del objeto
       del cual va a manejar.
   ```
-  * Ejemplo
+  //Ejemplo
     SDTUser
     SDTSeller
     SDTCustomer
-
   ```
 
 - [1.9](#campo) Data Providers (DP)
     - Los Data Providers deben ser nombrados con las primeras dos letras DP y la referencia del objeto.
   ```
-  * Ejemplo
+  //Ejemplo
     DPSlideMenu
     DPInvoiceComposition
   ```
@@ -166,7 +165,7 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
       legibilidad del código y facilitar su desarrollo y mantenimiento. En Genexus, se puede configurar la cantidad de
       espacios que corresponden a un tabulador.
   ```
-  * Ejemplo
+  //Ejemplo
     TextblockNombre.Class                   = ThemeClass:TexBlockTabReqOFF
     TextblockApellido.Class                 = ThemeClass:TexBlockTabReqOFF
     TextblockObservaciones.Class            = ThemeClass:TexBlockTabReqOFF
