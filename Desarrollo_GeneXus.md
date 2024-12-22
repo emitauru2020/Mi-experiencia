@@ -4,7 +4,7 @@ por [Emanuel da Silva](https://www.linkedin.com/in/emanuel-da-silva-5487a72a9/)
 
 ## Intro
 
-En este documento, se presentará una serie de estándares y prácticas recomendadas que el equipo debe seguir en el
+En este documento 2024, se presentará una serie de estándares y prácticas recomendadas que el equipo debe seguir en el
 desarrollo de software. Al seguir estos estándares, se logrará una mayor coherencia en el código, se facilitará la
 revisión y el mantenimiento del software.
 
