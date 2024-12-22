@@ -2,7 +2,7 @@
 por [Emanuel da Silva](https://www.linkedin.com/in/emanuel-da-silva-5487a72a9/)
 
 ## Intro
-Guia de comandos de consola en git que pueden ser de ayuda
+Guia de comandos de consola en git
 
 ## Lista de comandos
 
