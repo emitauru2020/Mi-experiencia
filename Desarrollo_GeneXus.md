@@ -21,6 +21,13 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
   - [Probar tu código](#probar-tu-código)
   - [Commit on exit](#commit-on-exit)
   - [Control de versiones](#control-de-versiones)
+- [Tips GeneXus](#tips-genexus)
+  - [Orden de ejacución de eventos en WP](#orden-de-ejacución-de-eventos-en-wp)
+  - [Código Cédula](#código-cédula)
+  - [Orden en un ForEach](#orden-en-un-foreach)
+  - [Envio Mail](#envio-mail)
+  - [Guardar archivos directorio local](#guardar-archivos-directorio-local)
+
 
 ## Definición de nombres para elementos de la KB
 
@@ -276,3 +283,75 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
   sobre él. Esto permite tener un registro histórico de los cambios y revertirlos en caso de ser necesario. Además, es
   recomendable utilizar una estrategia de branching adecuada para separar el código en diferentes ramas de desarrollo,
   de pruebas y de producción.
+
+**[Volver al inicio](#indice)**
+
+## Tips GeneXus
+
+## Orden de ejacución de eventos en WP
+- Al ejecutarse un WP los eventos se ejecutan en este orden:
+START --> LOAD --> GRID LOAD.
+
+## Código Cédula
+- Código para verificar el validez de la cédula en Uruguay.
+
+    ```text
+        //Codigo
+        
+    ```
+
+## Orden en un ForEach
+- Cuando ejecuta un ForEach podemos ordenar por un att que deseamos para por ejemplo reducir la consulta y hacer el código mmas performante. Supongamos que tenemos una tabla la cual queremos obtener el ultimo id guardado
+
+  ```text
+    //Orden descendente de TablaId
+    For Each Tabla
+      Order (TablaId)
+      &tablaId = TablaId
+      exit
+    EndFor
+  
+    ```
+
+## Envio Mail
+- Este código se implementa en un proc el cual puede ser llamado por la acción de un boton de un WP.
+Esto esta en la wiki: https://wiki.genexus.com/commwiki/wiki?6937,SMTPSession+Data+Type
+
+ ```text
+    &SMTPSession.Host = 'smtp.gmail.com'
+    &SMTPSession.Port = 465
+    &SMTPSession.Timeout = 20
+    &SMTPSession.Secure = 1
+    &SMTPSession.Authentication = 1
+    &SMTPSession.UserName = 'Info@gmail.com'
+    &SMTPSession.Password = '**********************'
+    &SMTPSession.Sender.Address  = 'Info@gmail.com'
+    &SMTPSession.Sender.Name  = 'Info@gmail.com'
+    
+    &ret = &SMTPSession.Login() 
+    if &SMTPSession.ErrCode <> 0 
+       &MailMsg = &ret.ToString() + ':Error al loguearse'
+       Do 'ManageError'                     //subroutine that manages errors  
+    else
+       &MailMsg = "login OK"               //&MailMsg is based on the varchar data type
+       &MailMessage.Clear()                //&MailMessage is based on the [[MailMessage Data Type]]
+       &MailMessage.To.Clear() 
+       &MailMessage.BCC.Clear()
+       &MailMessage.CC.Clear() 
+       &MailMessage.Subject="Email Subject XXX"
+       &MailMessage.Text="Message body" 
+       &MailMessage.Attachments.Clear()
+
+       &MailRecipient.Address = "xxx@gmail.com"   //&MailRecipient is based on the [[MailRecipient Data Type]]
+       &MailRecipient.Name = "xxx"    
+       &MailMessage.To.Add(&MailRecipient)
+       &MailMessage.CC.Add(&MailRecipient)
+       &MailMessage.BCC.Add(&MailRecipient)
+   
+       &sendmsg = &SMTPSession.Send(&MailMessage)    
+       &ret = &SMTPSession.Logout()
+   endif
+  
+  ```
+
+## Guardar archivos directorio local
