@@ -8,8 +8,8 @@
   3. [Sony PS4](#sony-ps4)
   4. [Sony PS5](#sony-ps5)
   5. [Xbox Clasica](#xbox-clasica)
-  6. [Xbox 360](#xobx-360)
-  7. [Xbox One](#xobx-one)
+  6. [Xbox 360](#xbox-360)
+  7. [Xbox One](#xbox-one)
 
 ## Sony PS2
 
