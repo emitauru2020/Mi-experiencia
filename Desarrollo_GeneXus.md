@@ -359,3 +359,5 @@ Esto esta en la wiki: https://wiki.genexus.com/commwiki/wiki?6937,SMTPSession+Da
 
 ## Error 403
 - Puede haber un error en una variable Wiki - https://wiki.genexus.com/commwiki/wiki?45483
+- https://www.genexus.com/en/developers/websac?data=41179
+- https://wiki.genexus.com/commwiki/wiki?31506,Security%20Web%20Development%20tips
