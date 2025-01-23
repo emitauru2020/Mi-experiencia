@@ -27,7 +27,8 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
   - [Orden en un ForEach](#orden-en-un-foreach)
   - [Envio Mail](#envio-mail)
   - [Guardar archivos directorio local](#guardar-archivos-directorio-local)
-
+- [Errores](#errores)
+    - [Error 403](#error-403)
 
 ## Definición de nombres para elementos de la KB
 
@@ -355,3 +356,6 @@ Esto esta en la wiki: https://wiki.genexus.com/commwiki/wiki?6937,SMTPSession+Da
   ```
 
 ## Guardar archivos directorio local
+
+## Error 403
+- Puede haber un error en una variable Wiki - https://wiki.genexus.com/commwiki/wiki?45483
