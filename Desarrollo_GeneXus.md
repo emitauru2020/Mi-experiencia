@@ -360,60 +360,40 @@ Esto esta en la wiki: https://wiki.genexus.com/commwiki/wiki?6937,SMTPSession+Da
 ## Guardar archivos directorio local
 
 ## Leer XML
-- //Procesa un XML plano : <documento><nm_id>419686</nm_id><id_auxiliar>2564</id_auxiliar><tipodoc>C</tipodoc><serie>A</se...
-//Se lee <documento> con &XMLReader.ReadType(1,'documento')
-//En el Do While recorre el Row de cada <documento> y se guarda el valor de los Type que deseamos
-//Importante : El orden de los Elementos leidos debe respetar el orden en el que estan en el XML
+- Para leer un XML por ejemplo: <padre><item_uno>Valor</item_uno><item_dos>Valor Dos</item_dos><item_tres>Valor Dos</item_tres.. se lee <item_uno> con &XMLReader.ReadType(1,'item_uno'). En el Do While recorre el XML y se guarda el valor de los Type que deseamos.
+- Importante : El orden de los Elementos leidos debe respetar el orden en el que estan en el XML
 
  ```text
-    &XMLReader.OpenFromString(&respuesta)
+    &XMLReader.OpenFromString(&xml)
 
-&success = &XMLReader.ReadType(1,'documento')
+&success = &XMLReader.ReadType(1,'item_uno')
 
 Do While (true)
 	
-   &success_nm_id = &XMLReader.ReadType(1,'nm_id')
-   If &success_nm_id <> 0
-	   &nm_id	= &XMLReader.Value
+   &success_item_dos = &XMLReader.ReadType(1,'item_dos')
+   If &success_item_dos <> 0
+	   &item_dos	= &XMLReader.Value
    Else
 	   exit
    Endif
 	
-	&success_fecha = &XMLReader.ReadType(1,'fecha')
-	&fecha	= &XMLReader.Value
+	&success_item_tres = &XMLReader.ReadType(1,'item_tres')
+	&item_tres	= &XMLReader.Value
 	
-	&success_vence = &XMLReader.ReadType(1,'vencimiento')
-	&vencimiento	= &XMLReader.Value
+	&success_item_cuatro = &XMLReader.ReadType(1,'item_cuatro')
+	&item_cuatro	= &XMLReader.Value
 	
-	&success_tipo = &XMLReader.ReadType(1,'tipo')
-	&tipo	= &XMLReader.Value
+	&success_item_cinco = &XMLReader.ReadType(1,'item_cinco')
+	&item_cinco	= &XMLReader.Value
 
-	&success_doc = &XMLReader.ReadType(1,'doc')
-	&doc_nro	= &XMLReader.Value
-	
-	&success_pagado = &XMLReader.ReadType(1,'pagado')
-	&pagado	= &XMLReader.Value
-	
-	&success_moneda = &XMLReader.ReadType(1,'abrevmoneda')
-	&moneda	= &XMLReader.Value
-	
-	&success_deuda = &XMLReader.ReadType(1,'deuda')
-	&deuda	= &XMLReader.Value
-	
-	&success_desc = &XMLReader.ReadType(1,'nombre_articulo')
-	&descripcion	= &XMLReader.Value
-	
 	//Guarda SDT
-	&SDTCuentaCorrienteItem = new()
-	&SDTCuentaCorrienteItem.CuentaCorrienteFechaFactura		= &fecha
-	&SDTCuentaCorrienteItem.CuentaCorrienteFechaVencimiento	= &vencimiento
-	&SDTCuentaCorrienteItem.CuentaCorrienteTipo				= &tipo
-	&SDTCuentaCorrienteItem.CuentaCorrienteNumeroFactura	= &doc_nro
-	&SDTCuentaCorrienteItem.CuentaCorrientePagado			= &pagado
-	&SDTCuentaCorrienteItem.CuentaCorrienteMoneda			= &moneda
-	&SDTCuentaCorrienteItem.CuentaCorrienteDeuda			= &deuda
-	&SDTCuentaCorrienteItem.CuentaCorrienteDescripcion		= &descripcion
-	&SDTCuentaCorriente.Add(&SDTCuentaCorrienteItem)
+	&SDTItem = new()
+	&SDTItem.ItemDos	= &ItemDos
+	&SDTItem.ItemTres	= ItemTres
+	&SDTItem.ItemCuatro	= &ItemCuatro
+	&SDTItem.ItemCinco	= &ItemCinco
+
+	&SDT.Add(&SDTItem)
 
 Enddo
 
