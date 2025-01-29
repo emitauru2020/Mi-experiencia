@@ -23,10 +23,12 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
   - [Control de versiones](#control-de-versiones)
 - [Tips GeneXus](#tips-genexus)
   - [Orden de ejacución de eventos en WP](#orden-de-ejacución-de-eventos-en-wp)
-  - [Código Cédula](#código-cédula)
   - [Orden en un ForEach](#orden-en-un-foreach)
+- [Ejemplos de Codigo](#ejemplos-codigo)
+  - [Código Cédula](#código-cédula)
   - [Envio Mail](#envio-mail)
   - [Guardar archivos directorio local](#guardar-archivos-directorio-local)
+  - [Leer XML](#leer-xml)
 - [Errores](#errores)
     - [Error 403](#error-403)
 
@@ -356,6 +358,68 @@ Esto esta en la wiki: https://wiki.genexus.com/commwiki/wiki?6937,SMTPSession+Da
   ```
 
 ## Guardar archivos directorio local
+
+## Leer XML
+- //Procesa un XML plano : <documento><nm_id>419686</nm_id><id_auxiliar>2564</id_auxiliar><tipodoc>C</tipodoc><serie>A</se...
+//Se lee <documento> con &XMLReader.ReadType(1,'documento')
+//En el Do While recorre el Row de cada <documento> y se guarda el valor de los Type que deseamos
+//Importante : El orden de los Elementos leidos debe respetar el orden en el que estan en el XML
+
+ ```text
+    &XMLReader.OpenFromString(&respuesta)
+
+&success = &XMLReader.ReadType(1,'documento')
+
+Do While (true)
+	
+   &success_nm_id = &XMLReader.ReadType(1,'nm_id')
+   If &success_nm_id <> 0
+	   &nm_id	= &XMLReader.Value
+   Else
+	   exit
+   Endif
+	
+	&success_fecha = &XMLReader.ReadType(1,'fecha')
+	&fecha	= &XMLReader.Value
+	
+	&success_vence = &XMLReader.ReadType(1,'vencimiento')
+	&vencimiento	= &XMLReader.Value
+	
+	&success_tipo = &XMLReader.ReadType(1,'tipo')
+	&tipo	= &XMLReader.Value
+
+	&success_doc = &XMLReader.ReadType(1,'doc')
+	&doc_nro	= &XMLReader.Value
+	
+	&success_pagado = &XMLReader.ReadType(1,'pagado')
+	&pagado	= &XMLReader.Value
+	
+	&success_moneda = &XMLReader.ReadType(1,'abrevmoneda')
+	&moneda	= &XMLReader.Value
+	
+	&success_deuda = &XMLReader.ReadType(1,'deuda')
+	&deuda	= &XMLReader.Value
+	
+	&success_desc = &XMLReader.ReadType(1,'nombre_articulo')
+	&descripcion	= &XMLReader.Value
+	
+	//Guarda SDT
+	&SDTCuentaCorrienteItem = new()
+	&SDTCuentaCorrienteItem.CuentaCorrienteFechaFactura		= &fecha
+	&SDTCuentaCorrienteItem.CuentaCorrienteFechaVencimiento	= &vencimiento
+	&SDTCuentaCorrienteItem.CuentaCorrienteTipo				= &tipo
+	&SDTCuentaCorrienteItem.CuentaCorrienteNumeroFactura	= &doc_nro
+	&SDTCuentaCorrienteItem.CuentaCorrientePagado			= &pagado
+	&SDTCuentaCorrienteItem.CuentaCorrienteMoneda			= &moneda
+	&SDTCuentaCorrienteItem.CuentaCorrienteDeuda			= &deuda
+	&SDTCuentaCorrienteItem.CuentaCorrienteDescripcion		= &descripcion
+	&SDTCuentaCorriente.Add(&SDTCuentaCorrienteItem)
+
+Enddo
+
+&XMLReader.Close()
+  
+  ```
 
 ## Error 403
 - Puede haber un error en una variable Wiki - https://wiki.genexus.com/commwiki/wiki?45483
