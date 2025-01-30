@@ -293,7 +293,7 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
 
 ## Orden de ejacución de eventos en WP
 - Al ejecutarse un WP los eventos se ejecutan en este orden:
-START --> LOAD --> GRID LOAD.
+START --> REFRESH --> GRID.
 
 ## Código Cédula
 - Código para verificar el validez de la cédula en Uruguay.
