@@ -25,6 +25,7 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
   - [Orden de ejacución de eventos en WP](#orden-de-ejacución-de-eventos-en-wp)
   - [Orden en un ForEach](#orden-en-un-foreach)
   - [Orden en un SDT](#orden-en-un-SDT)
+  - [Proc seteado para WS](#proc-seteado-WS)
 - [Ejemplos de Codigo](#ejemplos-codigo)
   - [Código Cédula](#código-cédula)
   - [Envio Mail](#envio-mail)
@@ -325,6 +326,14 @@ START --> REFRESH --> GRID.
     //Orden Descendente
 	&SDTNombre.Sort("[itemUno,itemDos]")
     ```
+
+**[Volver al inicio](#indice)**
+
+## Proc seteado para WS
+- Se puede crear un Procedimiento para que actualice la Base de Datos siendo ejecutado por una tarea programada.
+- Seteo en el Procedimiento: Call protocol = Command Line / Main progam = True
+- Ruta: C:\KBs\NombreAplicativo\NETPostgreSQL002\Web\bin, GeneXus genera .exe del procNombre con una 'a' al inicio --> aprocnombre.exe
+- Se puede probar manualmente corriendolo en la consola CMD
 
 ## Envio Mail
 - Este código se implementa en un proc el cual puede ser llamado por la acción de un boton de un WP.
