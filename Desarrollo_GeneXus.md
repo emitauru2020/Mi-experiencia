@@ -24,6 +24,7 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
 - [Tips GeneXus](#tips-genexus)
   - [Orden de ejacución de eventos en WP](#orden-de-ejacución-de-eventos-en-wp)
   - [Orden en un ForEach](#orden-en-un-foreach)
+  - [Orden en un SDT](#orden-en-un-SDT)
 - [Ejemplos de Codigo](#ejemplos-codigo)
   - [Código Cédula](#código-cédula)
   - [Envio Mail](#envio-mail)
@@ -314,6 +315,15 @@ START --> REFRESH --> GRID.
       exit
     EndFor
   
+    ```
+## Orden en un SDT
+- De esta forma se puede setear el orden por el cual queremos cargar el SDT, entre "" va el att correspondiente a un item del sdt
+  
+  ```text
+    //Orden Ascendente
+	&SDTNombre.Sort("itemUno,itemDos")
+    //Orden Descendente
+	&SDTNombre.Sort("[itemUno,itemDos]")
     ```
 
 ## Envio Mail
