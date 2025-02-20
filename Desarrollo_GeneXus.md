@@ -25,7 +25,7 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
   - [Orden de ejacución de eventos en WP](#orden-de-ejacución-de-eventos-en-wp)
   - [Orden en un ForEach](#orden-en-un-foreach)
   - [Orden en un SDT](#orden-en-un-SDT)
-  - [Proc seteado para WS](#proc-seteado-WS)
+  - [Proc seteado para WS](#proc-seteado-para-WS)
 - [Ejemplos de Codigo](#ejemplos-codigo)
   - [Código Cédula](#código-cédula)
   - [Envio Mail](#envio-mail)
