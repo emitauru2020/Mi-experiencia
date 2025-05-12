@@ -26,6 +26,7 @@ conjunto claro de directrices que deben seguir al escribir código y trabajar en
   - [Orden en un ForEach](#orden-en-un-foreach)
   - [Orden en un SDT](#orden-en-un-SDT)
   - [Proc seteado para WS](#proc-seteado-para-WS)
+  - [Instalar User Controls](#instalar-user-controls)
 - [Ejemplos de Codigo](#ejemplos-codigo)
   - [Código Cédula](#código-cédula)
   - [Envio Mail](#envio-mail)
@@ -334,6 +335,14 @@ START --> REFRESH --> GRID.
 - Seteo en el Procedimiento: Call protocol = Command Line / Main progam = True
 - Ruta: C:\KBs\NombreAplicativo\NETPostgreSQL002\Web\bin, GeneXus genera .exe del procNombre con una 'a' al inicio --> aprocnombre.exe
 - Se puede probar manualmente corriendolo en la consola CMD
+
+
+## Instalar User Controls
+- Instalación manual de User Controls
+  	1. Unzip los archivos
+  	2. Copiar en el directorio donde esta instalado genexus en la carpeta UserControls.
+  	3. Ejecutar GeneXus con /install en cosola, ejemplo: <GX_Installation_Path>\GeneXus /install.
+   	4. Chequear que el toolbox lo tenga agregado el la sección User Controls.
 
 ## Envio Mail
 - Este código se implementa en un proc el cual puede ser llamado por la acción de un boton de un WP.
